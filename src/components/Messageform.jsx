@@ -29,7 +29,7 @@ const MessageForm = (props) => {
   };
 
   return (
-    <form className="message-form" onSubmit={handleSubmit}>
+    <form className="message-form fixed-bottom mx-5 my-2" onSubmit={handleSubmit}>
       <input
         className="message-input"
         placeholder="Send a message..."
@@ -39,17 +39,17 @@ const MessageForm = (props) => {
       />
       <label htmlFor="upload-button">
         <span className="image-button">
-          <PictureOutlined className="picture-icon" />
+          <PictureOutlined className="picture-icon btn  btn-outline-primary "/>
         </span>
       </label>
       <input
         type="file"
         multiple={false}
-        id="upload-button"
-        style={{ display: 'none' }}
+        id="upload-button" 
+        style={{ display: 'none'  }}
         onChange={handleUpload.bind(this)}
       />
-      <button type="submit" className="send-button">
+      <button type="submit" className="send-button btn btn-outline-primary btn-sm">
         <SendOutlined className="send-icon" />
       </button>
     </form>

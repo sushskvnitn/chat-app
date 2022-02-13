@@ -1,7 +1,7 @@
 import MyMessage from './Mymessage';
 import TheirMessage from './Theirmessage';
 import MessageForm from './Messageform';
-
+import { BsFillPeopleFill } from "react-icons/bs";
 const ChatFeed = (props) => {
   const { chats, activeChat, userName, messages } = props;
 
@@ -45,11 +45,11 @@ const ChatFeed = (props) => {
 
   return (
     <div className="chat-feed">
-      <div className="chat-title-container">
-        <div className="chat-title">{chat?.title}</div>
-        <div className="chat-subtitle">
-          {chat.people.map((person) => ` ${person.person.username}`)}
-        </div>
+      <div className="chat-title-container rounded d-flex justify-content-between sticky-top">
+        <div className="chat-title text-uppercase"> <BsFillPeopleFill/>  {chat?.title}</div>
+        <h4 className="chat-subtitle text-end">
+          {chat.people.map((person) => ` ${person.person.username},`)}...
+        </h4>
       </div>
       {renderMessages()}
       <div style={{ height: '100px' }} />
